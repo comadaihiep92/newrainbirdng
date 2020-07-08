@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title rainbirdng
+
+        script(src="https://use.fontawesome.com/20e2d19935.js")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Roboto:400,400i,700,700i&subset=latin-ext")
+        link(rel="stylesheet", href="./css/reset.css")
+        link(rel="stylesheet", href="./css/style.css")
+    body
+        .wrapper
+            header.header.row
+                .header__top
+                    a(href="").header__social
+                        i.fa.fa-lg.fa-youtube
+
+                    a(href="").header__social
+                        i.fa.fa-lg.fa-linkedin
+                .header__bottom
+                    .header__logo
+                        a(href="").header__link
+                            img(src="./images/logo.png", alt="").header__img
+                    .header__menu.menu
+                        ul.menu__list
+                            li.menu__item
+                                a.menu__link(href="") The Group
+                            li.menu__item
+                                a.menu__link(href="") Projects
+                            li.menu__item
+                                a.menu__link(href="") Services
+                                ul.menu__drop
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="") Water Engineering
+                                        ul.menu__sub
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="") Waste Water
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="") Water treatment plant
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="") Civil Engineering
+                                        ul.menu__sub
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="") Projects
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="") Development
+                                                ul.menu__subtwo
+                                                    li.menu__subtwo-item
+                                                        a.menu__subtwo-link(href="") Road
+                                                    li.menu__subtwo-item
+                                                        a.menu__subtwo-link(href="") Dams
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="") Electro Mech
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="") Renewable Energy
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="") Agric Aid
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="") Consultancy
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="") FireFighting
+                    .header__ipum
+                        a(href="").header__link
+                            img(src="./images/ipump.png", alt="").header__image
+            main.content
+
+                .slider
+                    #myCarousel.carousel.slide(data-ride="carousel")
+
+                        ol.carousel-indicators
+                            li(data-target="#myCarousel" data-slide-to="0").active
+                            li(data-target="#myCarousel" data-slide-to="1")
+                            li(data-target="#myCarousel" data-slide-to="2")
+                            li(data-target="#myCarousel" data-slide-to="3")
+
+                        .carousel-inner
+                            .item.active
+                                a(href="")
+                                    .slider__text.row
+                                        a.slider__a(href="") PMXT: range completed
+                                    img(src="./images/slider1.png" alt="Los Angeles" style="width:100%; height: 100vh")
+
+                            .item
+                                a(href="")
+                                    .slider__text.row
+                                        a.slider__a(href="") DESERT+ENERGY: THE BEST SOLUTION
+                                    img(src="./images/slider2.png" alt="Los Angeles" style="width:100%; height: 100vh")
+                            .item
+                                a(href="")
+                                    .slider__text.row
+                                        a.slider__a(href="") the new k+energy
+                                    img(src="./images/slider3.png" alt="Los Angeles" style="width:100%; height: 100vh")
+                            .item
+                                a(href="")
+                                    .slider__text.row
+                                        a.slider__a(href="") AUSTRALIA: VICTORIAN WATER AUTHORITY
+                                    img(src="./images/slider4.jpg" alt="Los Angeles" style="width:100%; height: 100vh")
+                                    //- carousel-caption
+
+
+                    .click.row
+                        .click__top
+                            a(href="#myCarousel" data-slide="prev")
+                                span.button.button__back
+                                span.sr-only Previous
+
+                            a(href="#myCarousel" data-slide="next")
+                                span.button.button__next
+                                span.sr-only Next
+                        .click__down
+                            a(href="#solution" )
+                                //- tabindex="-1"
+                                img(src="./images/down.png", alt="")
+
+                .solution#solution
+                    .solution__content.row
+                        .solution__top
+                            h2.solution__title
+                                a(href="") Solutions
+                            a.solution__btn(href="") Access
+                        .solution__list
+                            .solution__item
+                                a.solution__link(href="")
+                                    img.solution__image(src="./images/solution1.jpg", alt="")
+                                    h3.solution__text Agriculture
+                            .solution__item
+                                a.solution__link(href="")
+                                    img.solution__image(src="./images/solution2.jpg", alt="")
+                                    h3.solution__text Water Industry
+                            .solution__item
+                                a.solution__link(href="")
+                                    img.solution__image(src="./images/solution3.jpg", alt="")
+                                    h3.solution__text Infrastructure
+                            .solution__item
+                                a.solution__link(href="")
+                                    img.solution__image(src="./images/solution4.jpg", alt="")
+                                    h3.solution__text General Industry
+                            .solution__item
+                                a.solution__link(href="")
+                                    img.solution__image(src="./images/solution5.jpg", alt="")
+                                    h3.solution__text Special industries
+                .product
+                    .product__content.row
+                        h1 Product
+                .project.row
+                    h1 Project
+            footer.footer
+                .footer.row
+                    h1 footer

@@ -1,0 +1,11 @@
+
+
+
+
+function intercetta() 
+{
+  for (var i=0; i<document.links.length; i++)
+  if (document.links[i].className=="blank") 
+  { document.links[i].target="_blank"; }
+}
+window.onload = intercetta;

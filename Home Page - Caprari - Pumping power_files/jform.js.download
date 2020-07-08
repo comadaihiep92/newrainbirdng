@@ -1,0 +1,503 @@
+function checkEmail(formField, resetField) {
+  var email_reg_exp = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-]{2,})+\.)+([a-zA-Z0-9]{2,})+$/;
+	var fieldVal = formField.value;
+
+	if (fieldVal == '') return true;
+
+  var emailOk = fieldVal.search(email_reg_exp);
+  if (emailOk == -1)
+  {
+    alert("Email non valida");
+
+		if (resetField)
+		{
+			formField.value = '';
+		}
+
+    return false;
+  }
+  else
+  {
+		return true;
+  }
+}
+
+function checkNumber(fieldId, minValue, maxValue, allowDecimal, numberGroupSeparator, numberDecimalSeparator)
+{
+    var retVal = true;
+
+    if (document.getElementById(fieldId))
+    {
+        retVal = false
+
+        var field = document.getElementById(fieldId);
+        var fieldValue = field.value;
+
+				if (fieldValue == '') return true;
+
+				if (allowDecimal)
+				{
+					// [DOC]: isNan non gestisce l'internalizzazione (vuole un punto come separatore dei decimali e nessun separatore per le migliaia)
+
+					if (!numberDecimalSeparator) numberDecimalSeparator = '.';
+					if (!numberGroupSeparator) numberGroupSeparator = '';
+					fieldValue = fieldValue.replace(numberGroupSeparator, '');
+					fieldValue = fieldValue.replace(numberDecimalSeparator, '.');
+				}
+
+        if (isNaN(fieldValue))
+        {
+					alert("Il campo accetta solo valori numerici");
+
+					//field.value = (minValue ? minValue : 0);
+					field.value = '';
+        }
+        else if (!allowDecimal && fieldValue.search(/^[0-9]+$/) != 0)
+				{
+					alert("Il campo accetta solo valori interi");
+
+					//field.value = (minValue ? minValue : 0);
+					field.value = '';
+				}
+				else
+        {
+					if ((minValue && !isNaN(parseInt(minValue)) && parseInt(fieldValue) < parseInt(minValue)) ||
+							(maxValue && !isNaN(parseInt(maxValue)) && parseInt(fieldValue) > parseInt(maxValue)))
+					{
+						alert("Valore non ammesso");
+
+						//field.value = (minValue ? minValue : 0);
+						field.value = '';
+					}
+
+					retVal = true;
+        }
+    }
+
+    return retVal;
+}
+
+function checkPWD(pwdFieldId, pwdField2Id, minLength) {
+	var pwdField = document.getElementById(pwdFieldId);
+	var pwdField2 = document.getElementById(pwdField2Id);
+
+	if (pwdField && pwdField2 && pwdField.value.length > 0 & pwdField2.value.length > 0)
+	{
+		if (pwdField.value != pwdField2.value)
+		{
+			alert("Le password immesse non sono uguali");
+
+			pwdField.value = "";
+			pwdField2.value = "";
+
+			return false;
+		}
+		else
+		{
+			if (minLength)
+			{
+				if (pwdField.value.length < minLength)
+				{
+					alert('La password deve essere lunga almeno ' + minLength + ' caratteri');
+
+					pwdField.value = "";
+					pwdField2.value = "";
+
+					return false;
+				}
+			}
+		}
+	}
+
+	return true;
+}
+
+function coreCheckCF(strCF)
+{
+	if (strCF)
+	{
+		strCF = strCF.toUpperCase();
+
+		var re = /^[A-Z]{6}[\d]{2}[A-Z][\d]{2}[A-Z][\d]{3}[A-Z]$/i
+
+		if (!re.test(strCF)) return false;
+
+		set1 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		set2 = "ABCDEFGHIJABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		setpari = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		setdisp = "BAKPLCQDREVOSFTGUHMINJWZYX";
+		s = 0;
+
+		for (i = 1; i <= 13; i += 2)
+			s += setpari.indexOf(set2.charAt(set1.indexOf( strCF.charAt(i))));
+		for (i = 0; i <= 14; i += 2)
+			s += setdisp.indexOf(set2.charAt(set1.indexOf( strCF.charAt(i))));
+
+		if (s%26 != strCF.charCodeAt(15)-'A'.charCodeAt(0)) return false;
+
+		return true;
+	}
+}
+
+function coreCheckPI(strPI)
+{
+	var retVal = false;
+
+	if (strPI)
+	{
+		var re = /^[\d]{11}$/
+
+		retVal = re.test(strPI);
+
+		if (retVal)
+		{
+			// VERIFICA CODICE CONTROLLO
+			var s = 0;
+			for (i = 0; i <= 9; i += 2)
+			{
+				s += strPI.charCodeAt(i) - '0'.charCodeAt(0);
+			}
+
+			for (i = 1; i <= 9; i += 2)
+			{
+				var c = 2 * (strPI.charCodeAt(i) - '0'.charCodeAt(0));
+				if (c > 9) c = c - 9;
+				s += c;
+			}
+			if ((10 - s % 10) % 10 != strPI.charCodeAt(10) - '0'.charCodeAt(0))
+			{
+				retVal = false;
+			}
+		}
+
+		return retVal;
+	}
+}
+
+function checkCF(elementID, showErrorMsg, resetField)
+{
+    var val;
+
+    if (document.getElementById(elementID))
+    {
+        val = document.getElementById(elementID).value.trim();
+
+        if (val != '')
+        {
+					if (!coreCheckCF(val))
+	        {
+						if (showErrorMsg) alert('Il codice fiscale inserito non e\' valido.');
+
+						if (resetField)
+						{
+							document.getElementById(elementID).value = '';
+						}
+
+						return false;
+					}
+        }
+    }
+
+    return true;
+}
+
+function checkPI(elementID, showErrorMsg, resetField)
+{
+    var val;
+
+    if (document.getElementById(elementID))
+    {
+        val = document.getElementById(elementID).value.trim();
+
+        if (val != '')
+        {
+					if (!coreCheckPI(val))
+	        {
+						if (showErrorMsg) alert('La partita IVA inserita non e\' valida.');
+
+						if (resetField)
+						{
+							document.getElementById(elementID).value = '';
+						}
+
+						return false;
+					}
+        }
+    }
+
+    return true;
+}
+
+function checkCF_PI(elementID, showErrorMsg, resetField)
+{
+    var val;
+
+    if (document.getElementById(elementID))
+    {
+        val = document.getElementById(elementID).value.trim();
+
+        if (val != '')
+        {
+					if (!coreCheckPI(val) && !coreCheckCF(val))
+	        {
+						if (showErrorMsg) alert('Il codice fiscale inserito non e\' valido.');
+
+						if (resetField)
+						{
+							document.getElementById(elementID).value = '';
+						}
+
+						return false;
+					}
+        }
+    }
+
+    return true;
+}
+
+function resetForm(idform){
+  var myform = document.forms[0];
+  if(idform != undefined) myform = document.forms[idform];
+  myform.reset();
+}
+
+// DOC: USATA DAL JFORM
+// TODO: ANDREBBE SOSTITUITA CON LA validateForm
+function checkForm(idform) {
+  //I CAMPI OBBLIGATORI DEVONO AVERE id="required"+n !!!
+
+  var regexp = /^(required)[0-9]*$/gi
+  var error = 0;
+  var myform = document.forms[0];
+  if (idform!=undefined) myform = document.forms[idform];
+  var campi = myform.elements;
+  var ncampi = myform.length;
+  var campimancanti = "\n";
+
+  for (i = 0; i < ncampi; i++)
+	{
+    campo = campi[i];
+    idcampo = campo.id;
+    tipocampo = campo.type;
+    if (campo)
+		{
+      if ((tipocampo != "hidden") && (idcampo.search(regexp) != -1))
+			{
+        switch (tipocampo)
+				{
+          case "checkbox":
+            if (myform.elements[campo.name].length)
+						{
+              var atleastone = false;
+              for (j = 0; j < myform.elements[campo.name].length; j++)
+							{
+                if (myform.elements[campo.name][j].checked) atleastone = true;
+              }
+              if (!atleastone)
+							{
+                error = 1;
+                campimancanti += (campo.name + "\n");
+              }
+            }
+						else
+						{
+              if (!myform.elements[campo.name].checked)
+							{
+                error = 1;
+                campimancanti += (campo.name + "\n");
+              }
+            }
+            break;
+
+          case "select-one":
+            if ((campo.selectedIndex == -1) || (campo.options[campo.selectedIndex].value == ""))
+						{
+              error = 1;
+              campimancanti += (campo.name + "\n");
+            }
+            break;
+
+          case "select-multiple":
+            if ((campo.selectedIndex == -1) || (campo.options[campo.selectedIndex].value == ""))
+						{
+              error = 1;
+              campimancanti += (campo.name + "\n");
+            }
+            break;
+
+          case "file":
+            if (campo.value == "")
+						{
+              error = 1;
+              campimancanti += (campo.name + "\n");
+            }
+            break;
+
+          case "text":
+            if (campo.value == "")
+						{
+              error = 1;
+              campimancanti += (campo.name + "\n");
+            }
+            break;
+
+          case "textarea":
+            if (campo.value == "")
+						{
+              error = 1;
+              campimancanti += (campo.name + "\n");
+            }
+            break;
+
+          case "radio":
+            var atleastone = false;
+            for (j = 0; j < myform.elements[campo.name].length; j++)
+						{
+              if (myform.elements[campo.name][j].checked) atleastone = true;
+            }
+            if (!atleastone)
+						{
+              error = 1;
+              campimancanti += (campo.name + "\n");
+            }
+            break;
+
+          default:
+        }
+      }
+    }
+  }
+
+  if (error == 1)
+	{
+		alert("ATTENZIONE: Per procedere e' necessario compilare tutti i campi obbligatori");
+
+		return false;
+  }
+  else
+	{
+    return true;
+  }
+}
+
+
+//funzione per il controllo lato client sui campi obbligatori
+// - da aggiungere nell'attributo 'onsubmit' della form
+// - richiede un campo hidden con id='requiredfields' con
+//   l'elenco dei nomi dei campi obbligatori separati da virgola (AND)
+// - supporta anche parentesi e || per creare diverse combinazioni di campi
+//   obbligatori
+// - se viene specificato un campo hidden con id='requiredfieldsmsg',
+//   questo viene visualizzato in caso non siano compilati tutti i
+//   campi obbligatori.
+function validateForm(_form) {
+
+  var reqfields = document.getElementById('requiredfields');
+  var reqfieldsmsg = document.getElementById('requiredfieldsmsg');
+
+	try
+	{
+
+		if (reqfields && reqfields.value.trim().length > 0)
+		{
+	    var rf = reqfields.value;
+
+	    var re = new RegExp(",","gi");
+	    rf = rf.replace(re,'&&');
+	    re = new RegExp("\s","gi");
+	    var rf2 = rf.split(/[\s&&\(\)||]/gi);
+
+	    for (var i = 0; i < rf2.length; i++)
+			{
+	      var token = rf2[i].trim();
+	      if (token.length > 0)
+				{
+	        var valcampo = false;
+	        if (isFilled(_form, token))
+					{
+	          valcampo = true;
+					}
+
+	        rf = rf.replace(token,valcampo)
+	      }
+	    }
+	    //alert(rf)
+
+	    re = null;
+	    rf2 = null;
+
+	    var err = false;
+	    eval("if(!("+rf+")) err=true")
+
+	    if (err)
+	    {
+	      alert(reqfieldsmsg&&reqfieldsmsg.value!='' ? reqfieldsmsg.value : 'Per proseguire è necessario compilare tutti i campi obbligatori')
+
+	      return false;
+	    }
+	    else
+	    {
+	      return true;
+	    }
+
+	  } //end if ci sono campi obbligatori
+
+	  return true;
+
+	}
+  catch (e)
+  {
+    alert(e.message);
+
+    return false;
+  }
+}
+
+function isFilled(_form, _el) {
+
+  var filled = false;
+
+  for (var i=0;_form.elements[i];i++)
+  {
+    var campo = _form.elements[i];
+    if (campo && campo.name == _el)
+    {
+      switch (campo.type) {
+	case "select-one":
+          if (campo.selectedIndex!=-1 && campo.options[campo.selectedIndex].value!="") {
+            filled = true;
+          }
+	  break;
+        case "select-multiple":
+          for (var x=0; x < campo.length; x++)
+          {
+            if (campo[x].selected == true)
+            {
+              filled = true;
+              break;
+            }
+          }
+	  break;
+	case "radio":
+          if (campo.checked) return true;
+          break;
+	case "checkbox":
+          if (campo.checked) return true;
+	  break;
+/*
+case "file":
+case "text":
+case "textarea":
+*/
+	default:
+		if (campo.value.trim() != '')
+		{
+			filled = true;
+		}
+	  break;
+      }
+    }
+  }
+
+  return filled;
+}
