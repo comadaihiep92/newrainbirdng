@@ -1,9 +1,12 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  background: #ededed;
+  color: #333;
 }
 
 body {
+  background: #ededed;
   font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.5;
@@ -11,9 +14,13 @@ body {
 }
 
 .row {
-  max-width: 120rem;
+  max-width: 121rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.column {
+  padding: 0 5px;
 }
 
 .wrapper {
@@ -167,6 +174,11 @@ body {
   top: -100px;
   height: 100vh;
 }
+.slider .item img {
+  display: block;
+  height: 100vh;
+  background-size: cover;
+}
 .slider__text {
   position: absolute;
   left: 13%;
@@ -223,6 +235,36 @@ body {
   background: #fff url(../images/arrow-right.png) 4px 50% no-repeat;
 }
 
+.content__top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.3rem;
+}
+.content__title a {
+  font-size: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+}
+.content__title-blue {
+  color: #1c522c !important;
+}
+.content__btn {
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  padding: 5px 10px;
+}
+.content__btn-blue {
+  color: #1c522c;
+  border-color: #1c522c;
+}
+
 .solution {
   background: #2c2e32;
   padding: 40px 0;
@@ -233,32 +275,10 @@ body {
   align-items: flex-start;
   width: 100%;
 }
-.solution__top {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2.3rem;
-}
-.solution__title a {
-  font-size: 3rem;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: Lato, sans-serif;
-  font-weight: 300;
-}
-.solution__btn {
-  text-transform: uppercase;
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  font-size: 1.4rem;
-  padding: 5px 10px;
-}
 .solution__list {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -266,9 +286,12 @@ body {
   padding: 0 5px;
   width: 23.8rem;
   box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 .solution__link {
-  height: 23.7rem;
+  height: 32.7rem;
+  display: block;
+  background: #fff;
 }
 .solution__image {
   max-width: 100%;
@@ -277,6 +300,7 @@ body {
   display: block;
 }
 .solution__text {
+  font-family: Lato, sans-serif;
   text-transform: uppercase;
   font-size: 1.7rem;
   line-height: 1.3;
@@ -287,6 +311,210 @@ body {
   color: #023c19;
   font-weight: 300;
   text-align: center;
+}
+
+.product {
+  background: #2c2e32;
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+}
+.product__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.product__list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.product__item {
+  padding: 0 1rem;
+  width: 30rem;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.product__link {
+  height: 39.2rem;
+  display: block;
+  background: #fff;
+}
+.product__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.product__text {
+  position: relative;
+  font-family: Lato, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  line-height: 1.3;
+  min-height: 2em;
+  padding: 5rem 1rem 1rem;
+  background: #fff;
+  color: #023c19;
+  font-weight: 300;
+  text-align: center;
+}
+.product__text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 66px;
+  height: 68px;
+  margin-left: -33px;
+  top: -34px;
+  left: 50%;
+  background: none no-repeat 50% 50%;
+  background-size: contain;
+}
+.product__text-one::after {
+  background: url(../images/icon-product1.png) no-repeat;
+}
+.product__text-two::after {
+  background: url(../images/icon-product2.png) no-repeat;
+}
+.product__text-three::after {
+  background: url(../images/icon-product3.png) no-repeat;
+}
+.product__text-four::after {
+  background: url(../images/icon-product4.png) no-repeat;
+}
+
+.project {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  flex-direction: column;
+}
+.project__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.project__left, .project__right {
+  width: 50%;
+  padding: 0 0.5rem;
+}
+.project__title {
+  font-size: 1.4rem;
+  color: #1c522c;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.project__desc {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+.project__latest {
+  font-size: 1.4rem;
+  color: #1c522c;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+  padding-left: 2rem;
+}
+.project__list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.project__item {
+  width: 50%;
+  padding-left: 2rem;
+  margin-bottom: 0.7rem;
+}
+.project__link {
+  padding: 0.7rem 4.2rem 0.7rem 1.4rem;
+  display: block;
+  color: #000;
+  background: #fff;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  position: relative;
+}
+.project__link::after {
+  content: "";
+  width: 26px;
+  height: 23px;
+  display: block;
+  position: absolute;
+  background: url(../images/arrow-right.png) no-repeat 0 50%;
+  right: 1em;
+  top: 50%;
+  margin-top: -11px;
+}
+.project__link-more {
+  color: #fff;
+  background: #00461c;
+  height: 4.7rem;
+  display: table;
+  width: 100%;
+}
+.project__link-more::after {
+  background-position: 100% 50%;
+}
+.project__text {
+  height: 1.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project__text-more {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2c2e32;
+  color: #fff;
+  padding: 0.7rem 0;
+}
+.footer__left, .footer__right {
+  width: 50%;
+}
+.footer__left p, .footer__right p {
+  font-size: 1.4rem;
+  color: #fff;
+}
+.footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.footer__right ul {
+  display: flex;
+  align-items: center;
+}
+.footer__right ul li {
+  padding-left: 1rem;
+}
+.footer__right ul li a {
+  font-size: 1.4rem;
+  color: #fff;
+}
+.footer__social a {
+  font-size: 1.4rem;
+  color: #fff;
+}
+.footer__social a:last-child {
+  margin-left: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

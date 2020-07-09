@@ -14,7 +14,7 @@ html(lang="en")
         link(rel="stylesheet", href="./css/style.css")
     body
         .wrapper
-            header.header.row
+            header.header.row.column
                 .header__top
                     a(href="").header__social
                         i.fa.fa-lg.fa-youtube
@@ -82,23 +82,23 @@ html(lang="en")
                                 a(href="")
                                     .slider__text.row
                                         a.slider__a(href="") PMXT: range completed
-                                    img(src="./images/slider1.png" alt="Los Angeles" style="width:100%; height: 100vh")
+                                    img(src="./images/slider1.png" alt="Los Angeles" style="width:100%; ")
 
                             .item
                                 a(href="")
                                     .slider__text.row
                                         a.slider__a(href="") DESERT+ENERGY: THE BEST SOLUTION
-                                    img(src="./images/slider2.png" alt="Los Angeles" style="width:100%; height: 100vh")
+                                    img(src="./images/slider2.png" alt="Los Angeles" style="width:100%; ")
                             .item
                                 a(href="")
                                     .slider__text.row
                                         a.slider__a(href="") the new k+energy
-                                    img(src="./images/slider3.png" alt="Los Angeles" style="width:100%; height: 100vh")
+                                    img(src="./images/slider3.png" alt="Los Angeles" style="width:100%; ")
                             .item
                                 a(href="")
                                     .slider__text.row
                                         a.slider__a(href="") AUSTRALIA: VICTORIAN WATER AUTHORITY
-                                    img(src="./images/slider4.jpg" alt="Los Angeles" style="width:100%; height: 100vh")
+                                    img(src="./images/slider4.jpg" alt="Los Angeles" style="width:100%;")
                                     //- carousel-caption
 
 
@@ -117,11 +117,11 @@ html(lang="en")
                                 img(src="./images/down.png", alt="")
 
                 .solution#solution
-                    .solution__content.row
-                        .solution__top
-                            h2.solution__title
+                    .solution__content.row.column
+                        .content__top
+                            h2.content__title
                                 a(href="") Solutions
-                            a.solution__btn(href="") Access
+                            a.content__btn(href="") Access
                         .solution__list
                             .solution__item
                                 a.solution__link(href="")
@@ -144,10 +144,78 @@ html(lang="en")
                                     img.solution__image(src="./images/solution5.jpg", alt="")
                                     h3.solution__text Special industries
                 .product
-                    .product__content.row
-                        h1 Product
+                    .product__content.row.column
+                        .content__top
+                            h2.content__title
+                                a(href="") Product range
+                            a.content__btn(href="") Access
+                        .product__list
+                            .product__item
+                                a.product__link(href="")
+                                    img.product__image(src="./images/product1.jpg", alt="")
+                                    h3.product__text.product__text-one Deep water collection and distribution
+                            .product__item
+                                a.product__link(href="")
+                                    img.product__image(src="./images/product2.jpg", alt="")
+                                    h3.product__text.product__text-two Surface water lifting and distribution
+                            .product__item
+                                a.product__link(href="")
+                                    img.product__image(src="./images/product3.jpg", alt="")
+                                    h3.product__text.product__text-three Waste water collection and distribution
+                            .product__item
+                                a.product__link(href="")
+                                    img.product__image(src="./images/product4.jpg", alt="")
+                                    h3.product__text.product__text-four Pump control technology
                 .project.row
-                    h1 Project
+                    .content__top.column
+                        h2.content__title
+                            a.content__title-blue(href="") Projects
+                        a.content__btn.content__btn-blue(href="") Access
+                    .project__bottom
+                        .project__left
+                            h4.project__title Superior service for each individual customer.
+                            p.project__desc To maintain its leading position on an ever more competitive market and besides tried-and-tested problem solving skills based on know-how that’s far from easy to imitate, Caprari has also invested in its ability to involve the customers to an increasingly greater extent when it comes to creating performance and value. We consider our customers as precious partners with whom we collaborate and establish long-term relations of mutual trust.
+                                br
+                                br
+                                |   Please find here below some of our international plants that present a picture on the dynamism of our Company.
+                        .project__right
+                            h3.project__latest Latest projects
+                            ul.project__list
+                                li.project__item
+                                    a.project__link(href="")
+                                        h4.project__text MERUNGLE HILL PROJECT
+                                li.project__item
+                                    a.project__link(href="")
+                                        h4.project__text GRAND ETHIOPIAN RENAISSANCE DAM (Milleniumdam)
+                                li.project__item
+                                    a.project__link(href="")
+                                        h4.project__text URANIUM MINE - DARWIN RANGER MINE
+                                li.project__item
+                                    a.project__link(href="")
+                                        h4.project__text DISCOVERY GARDENS
+                                li.project__item
+                                    a.project__link(href="")
+                                        h4.project__text BARI - ARTIFICIAL TUNNEL
+                                li.project__item
+                                    a.project__link.project__link-more(href="")
+                                        h4.project__text.project__text-more List of projects
             footer.footer
-                .footer.row
-                    h1 footer
+                .footer.row.column
+                    .footer__left
+                        p © Copyright 2020 - Caprari Spa Via Emilia Ovest 900 - 41123 Modena
+                        p Tel. +39 059897611 | Fax +39 059897897
+                        p P. IVA n° 01779310364
+                    .footer__right
+                        ul
+                            li
+                                a(href="") Legal Notices
+                            li
+                                a(href="") Privacy e cookie policy
+                            li
+                                a(href="") Credits
+                        .footer__social
+                            a(href="")
+                                i.fa.fa-lg.fa-youtube
+
+                            a(href="")
+                                i.fa.fa-lg.fa-linkedin
