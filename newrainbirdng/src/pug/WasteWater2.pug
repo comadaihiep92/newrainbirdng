@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title rainbirdng
+
+        script(src="https://use.fontawesome.com/20e2d19935.js")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Roboto:400,400i,700,700i&subset=latin-ext")
+        link(rel="stylesheet", href="./css/reset.css")
+        link(rel="stylesheet", href="./css/style.css")
+
+    body
+        .wrapper
+            header.header.row.column
+                .header__top
+                    a(href="javascript:void(0)").header__social
+                        i.fa.fa-lg.fa-youtube
+
+                    a(href="javascript:void(0)").header__social
+                        i.fa.fa-lg.fa-linkedin
+                .header__bottom
+                    .header__logo
+                        a(href="./index.html").header__link
+                            img(src="./images/logo.png", alt="").header__img
+                    .header__menu.menu
+                        i.fa.fa-lg.fa-times.menu__close
+                        ul.menu__list
+                            li.menu__item
+                                a.menu__link(href="javascript:void(0)") The Group
+                            li.menu__item
+                                a.menu__link(href="javascript:void(0)") Projects
+                            li.menu__item
+                                a.menu__link(href="javascript:void(0)") Services
+                                ul.menu__drop
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="javascript:void(0)") Water Engineering
+                                        ul.menu__sub
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="./wastewater.html") Waste Water
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="./WaterTreatmentPlants.html") Water treatment plant
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="javascript:void(0)") Civil Engineering
+                                        ul.menu__sub
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="./projects.html") Projects
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="javascript:void(0)") Development
+                                                ul.menu__subtwo
+                                                    li.menu__subtwo-item
+                                                        a.menu__subtwo-link(href="javascript:void(0)") Road
+                                                    li.menu__subtwo-item
+                                                        a.menu__subtwo-link(href="./dams.html") Dams
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="javascript:void(0)") Electro Mech
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="javascript:void(0)") Renewable Energy
+                                        ul.menu__sub
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="./solar.html") Water solar-water-solutions
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="javascript:void(0)") Agric Aid
+                                        ul.menu__sub
+                                            li.menu__sub-item
+                                                a.menu__link-sub(href="./Irrigation.html") Irrigation
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="javascript:void(0)") Consultancy
+                                    li.menu__dropdown
+                                        a.menu__link-drop(href="javascript:void(0)") FireFighting
+                    i.fa.fa-lg.fa-bars.menu__collapse
+                    .header__ipum
+                        a(href="javascript:void(0)").header__link
+                            img(src="./images/ipump.png", alt="").header__image
+            main.water
+                .pagi
+                    ul.water__pagi.pagi__list.row.column
+                        li.pagi__item
+                            a.pagi__link(href="javascript:void(0)") Home
+                        li.pagi__item
+                            a.pagi__link(href="javascript:void(0)") Services
+                        li.pagi__item
+                            a.pagi__link(href="javascript:void(0)") Water Engineering
+                        li.pagi__item
+                            a.pagi__link(href="javascript:void(0)") Waste Water
+                .water__item
+                    .water__top.row.column
+                        .water__head
+                            a.water__link Water Engineering
+                            h1.water__title Civil waste water
+                        .water__image
+                            img(src="./images/civil_waste_water.jpg", alt="")
+                .water__product.productw.row.column
+                    h2.water__text Products
+                    .productw__list
+                        .productw__item
+                            a.productw__link(href="")
+                                .productw__box
+                                    img.productw__image(src="./images/water5.png", alt="")
+                                    .productw__info
+                                        h3.productw__name K+ DN 65 ÷ 200
+                                            img.productw__energy(src="./images/energy-drywet-system.png", alt="", srcset="").product__energy
+                                        p.productw__desc K+ Electric submersible pumps DN 65 ÷ 200
+                        .productw__item
+                            a.productw__link(href="")
+                                .productw__box
+                                    img.productw__image(src="./images/water6.png", alt="")
+                                    .productw__info
+                                        h3.productw__name K+ DN 250 ÷ 350
+                                            img.productw__energy(src="./images/energy-drywet-system.png", alt="", srcset="").product__energy
+                                        p.productw__desc K+ Electric submersible pumps DN 250 ÷ 350
+
+                    nav.water__pagi(aria-label="Page navigation")
+                        ul.pagiB
+                            li.pagiB__item.pagiB__disable
+                                a.pagiB__link(href="./wastewater.html" aria-label="Previous")
+                                    span(aria-hidden="true") &laquo;
+                                    //- span.pagiB-only Previous
+                            li.pagiB__item
+                                a.pagiB__link(href="./wastewater.html") 1
+                            li.pagiB__item.pagiB__active
+                                a.pagiB__link(href="./wastewater2.html") 2
+                            //- li.page-item
+                            //-     a.page-link(href="#") 3
+
+                            li.pagiB__item
+                                a.pagiB__link(href="javascript:void(0)" aria-label="Next")
+                                    span(aria-hidden="true") &raquo;
+                                    //- span.pagiB-only Next
+            footer.footer
+                .footer.row.column
+                    .footer__left
+                        p © Copyright 2020 - Caprari Spa Via Emilia Ovest 900 - 41123 Modena
+                        p Tel. +39 059897611 | Fax +39 059897897
+                        p P. IVA n° 01779310364
+                    .footer__right
+                        ul
+                            li
+                                a(href="javascript:void(0)") Legal Notices
+                            li
+                                a(href="javascript:void(0)") Privacy e cookie policy
+                            li
+                                a(href="javascript:void(0)") Credits
+                        .footer__social
+                            a(href="javascript:void(0)")
+                                i.fa.fa-lg.fa-youtube
+
+                            a(href="javascript:void(0)")
+                                i.fa.fa-lg.fa-linkedin
+    script(src="./js/main.js")
