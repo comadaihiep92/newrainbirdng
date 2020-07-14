@@ -717,6 +717,9 @@ body {
   height: 28rem;
   width: auto;
 }
+.water__image--auto img {
+  height: auto;
+}
 .water__image-big {
   height: 28rem;
 }
@@ -735,6 +738,16 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.water__info {
+  width: 35%;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.water__info h3, .water__info strong {
+  font-weight: 700;
 }
 
 .pagiB {
@@ -819,6 +832,9 @@ body {
   margin: 1rem 0;
   height: 100%;
 }
+.productw__item--big {
+  width: 33%;
+}
 .productw__box {
   width: 100%;
   background: #fff;
@@ -841,6 +857,9 @@ body {
   overflow: hidden;
   padding: 1.75rem 0.7rem;
 }
+.productw__info--left {
+  text-align: left;
+}
 .productw__info2 {
   height: 100%;
   background: #fff;
@@ -851,6 +870,7 @@ body {
   text-transform: uppercase;
   position: relative;
   font-weight: 700;
+  margin-bottom: 0.7rem;
 }
 .productw__energy {
   display: block;
@@ -859,6 +879,9 @@ body {
 .productw__desc {
   font-size: 1.4rem;
   color: #333;
+}
+.productw__desc--bottom {
+  margin-bottom: 1.4rem;
 }
 
 @media screen and (max-width: 1199px) {
@@ -896,6 +919,124 @@ body {
 
   .water__desc {
     padding: 10px 0;
+  }
+}
+.vision {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.vision__left, .vision__right {
+  width: 50%;
+}
+.vision__right {
+  padding: 0 10px;
+}
+.vision__text {
+  color: #333;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+.vision__image {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  .vision {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vision__left, .vision__right {
+    width: 100%;
+  }
+  .vision__text {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .vision__image {
+    width: 100%;
+  }
+}
+.contact {
+  width: 100%;
+}
+.contact__form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.contact__left, .contact__right {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contact__left {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.contact__left .contact__item {
+  width: 50%;
+  box-sizing: border-box;
+}
+.contact__item {
+  padding: 0 10px;
+}
+.contact__label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 8.5rem;
+}
+.contact__label {
+  font-size: 1.4rem;
+  color: #111;
+}
+.contact__input {
+  padding: 0.9rem;
+  height: 3.9rem;
+  width: 100%;
+  font-size: inherit;
+  margin-bottom: 1.6rem;
+}
+.contact__right .contact__item {
+  width: 100%;
+}
+.contact__area {
+  height: 18rem;
+}
+.contact__submit-input {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: #fff;
+  background: #1c522c;
+  border: unset;
+  padding: 10px 15px;
+  font-weight: 500;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .contact__form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact__left,
+.contact__right {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .contact__left .contact__item {
+    width: 100%;
   }
 }
 

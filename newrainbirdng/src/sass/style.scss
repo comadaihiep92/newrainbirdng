@@ -730,6 +730,7 @@ body {
     font-weight: 700;
   }
   &__image {
+    // width: 25%;
     padding: 0 0.5rem;
     display: flex;
     align-items: center;
@@ -737,7 +738,13 @@ body {
     & img {
       margin-top: -6rem;
       height: 28rem;
+
       width: auto;
+    }
+    &--auto {
+      & img {
+        height: auto;
+      }
     }
   }
   &__image-big {
@@ -758,6 +765,17 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+  &__info {
+    width: 35%;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+    & h3,
+    & strong {
+      font-weight: 700;
+    }
   }
 }
 
@@ -850,6 +868,9 @@ body {
     padding: 0 1rem;
     margin: 1rem 0;
     height: 100%;
+    &--big {
+      width: 33%;
+    }
   }
   &__link {
   }
@@ -874,6 +895,9 @@ body {
     height: 16.8rem;
     overflow: hidden;
     padding: 1.75rem 0.7rem;
+    &--left {
+      text-align: left;
+    }
   }
   &__info2 {
     height: 100%;
@@ -885,6 +909,7 @@ body {
     text-transform: uppercase;
     position: relative;
     font-weight: 700;
+    margin-bottom: 0.7rem;
   }
   &__energy {
     display: block;
@@ -893,6 +918,9 @@ body {
   &__desc {
     font-size: 1.4rem;
     color: #333;
+    &--bottom {
+      margin-bottom: 1.4rem;
+    }
   }
 }
 
@@ -927,5 +955,132 @@ body {
   }
   .water__desc {
     padding: 10px 0;
+  }
+}
+
+.vision {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  &__left,
+  &__right {
+    width: 50%;
+  }
+  &__right {
+    padding: 0 10px;
+  }
+  &__text {
+    color: #333;
+    font-size: 1.4rem;
+    text-align: justify;
+  }
+  &__image {
+    // max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .vision {
+    flex-direction: column;
+    align-items: center;
+    &__left,
+    &__right {
+      width: 100%;
+    }
+    &__text {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .vision__image {
+    width: 100%;
+  }
+}
+
+.contact {
+  width: 100%;
+  &__form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__left,
+  &__right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__left {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .contact__item {
+      width: 50%;
+      box-sizing: border-box;
+    }
+  }
+  &__item {
+    padding: 0 10px;
+  }
+  &__label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 8.5rem;
+  }
+  &__label {
+    font-size: 1.4rem;
+    color: #111;
+  }
+  &__input {
+    padding: 0.9rem;
+    height: 3.9rem;
+    width: 100%;
+    font-size: inherit;
+    margin-bottom: 1.6rem;
+  }
+  &__right {
+    .contact__item {
+      width: 100%;
+    }
+  }
+  &__area {
+    height: 18rem;
+  }
+  &__submit-input {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1c522c;
+    border: unset;
+    padding: 10px 15px;
+    font-weight: 500;
+    border-radius: 1rem;
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact__form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact__left,
+  .contact__right {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .contact__left .contact__item {
+    width: 100%;
   }
 }
